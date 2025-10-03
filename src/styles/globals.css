@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  --font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  
+  /* Brand Colors */
+  --brand-primary: #2563EB;
+  --brand-secondary: #10B981;
+  
+  /* Text Colors */
+  --text-primary: #111827;
+  --text-secondary: #6B7280;
+  
+  /* Background Colors */
+  --bg-page: #F9FAFB;
+  --surface: #FFFFFF;
+  
+  /* Status Colors */
+  --danger: #EF4444;
+  --warning: #F59E0B;
+  --success: #10B981;
+  
+  /* Semantic Tokens */
+  --background: var(--bg-page);
+  --foreground: var(--text-primary);
+  --card: var(--surface);
+  --card-foreground: var(--text-primary);
+  --popover: var(--surface);
+  --popover-foreground: var(--text-primary);
+  --primary: var(--brand-primary);
+  --primary-foreground: #ffffff;
+  --secondary: var(--brand-secondary);
+  --secondary-foreground: #ffffff;
+  --muted: #F3F4F6;
+  --muted-foreground: var(--text-secondary);
+  --accent: #F3F4F6;
+  --accent-foreground: var(--text-primary);
+  --destructive: var(--danger);
+  --destructive-foreground: #ffffff;
+  --border: #E5E7EB;
+  --input: transparent;
+  --input-background: var(--surface);
+  --switch-background: #D1D5DB;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: var(--brand-primary);
+  
+  /* Typography Scale */
+  --text-h1: 28px;
+  --text-h1-line: 36px;
+  --text-h2: 22px;
+  --text-h2-line: 30px;
+  --text-h3: 18px;
+  --text-h3-line: 26px;
+  --text-body: 14px;
+  --text-body-line: 22px;
+  --text-small: 12px;
+  --text-small-line: 18px;
+  
+  /* Spacing Scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  
+  /* Border Radius */
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  
+  /* Chart Colors */
+  --chart-1: var(--brand-primary);
+  --chart-2: var(--brand-secondary);
+  --chart-3: var(--warning);
+  --chart-4: #8B5CF6;
+  --chart-5: #EC4899;
+  
+  /* Sidebar */
+  --sidebar: var(--surface);
+  --sidebar-foreground: var(--text-primary);
+  --sidebar-primary: var(--brand-primary);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--accent);
+  --sidebar-accent-foreground: var(--text-primary);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--brand-primary);
+}
+
+.dark {
+  /* Dark Mode Colors */
+  --text-primary: #F9FAFB;
+  --text-secondary: #9CA3AF;
+  --bg-page: #111827;
+  --surface: #1F2937;
+  
+  /* Semantic Tokens Dark */
+  --background: var(--bg-page);
+  --foreground: var(--text-primary);
+  --card: var(--surface);
+  --card-foreground: var(--text-primary);
+  --popover: var(--surface);
+  --popover-foreground: var(--text-primary);
+  --primary: #3B82F6;
+  --primary-foreground: #ffffff;
+  --secondary: #059669;
+  --secondary-foreground: #ffffff;
+  --muted: #374151;
+  --muted-foreground: var(--text-secondary);
+  --accent: #374151;
+  --accent-foreground: var(--text-primary);
+  --destructive: #DC2626;
+  --destructive-foreground: #ffffff;
+  --border: #374151;
+  --input: #374151;
+  --input-background: var(--surface);
+  --switch-background: #4B5563;
+  --ring: var(--primary);
+  
+  /* Chart Colors Dark */
+  --chart-1: #3B82F6;
+  --chart-2: #059669;
+  --chart-3: #D97706;
+  --chart-4: #7C3AED;
+  --chart-5: #DB2777;
+  
+  /* Sidebar Dark */
+  --sidebar: #1F2937;
+  --sidebar-foreground: var(--text-primary);
+  --sidebar-primary: #3B82F6;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #374151;
+  --sidebar-accent-foreground: var(--text-primary);
+  --sidebar-border: #374151;
+  --sidebar-ring: var(--primary);
+  
+  /* Shadows Dark */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-family);
+    font-size: var(--text-body);
+    line-height: var(--text-body-line);
+  }
+
+  /* Enhanced focus styles for accessibility */
+  *:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  /* Ensure minimum 4.5:1 contrast ratio for interactive elements */
+  button, a, [role="button"] {
+    position: relative;
+  }
+
+  /* Skip to main content link for screen readers */
+  .skip-to-main {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--primary);
+    color: var(--primary-foreground);
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 100;
+    transition: top 0.3s;
+  }
+
+  .skip-to-main:focus {
+    top: 6px;
+  }
+}
+
+/**
+ * Base typography following design system specifications
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: var(--text-h1);
+      line-height: var(--text-h1-line);
+      font-weight: var(--font-weight-medium);
+    }
+
+    h2 {
+      font-size: var(--text-h2);
+      line-height: var(--text-h2-line);
+      font-weight: var(--font-weight-medium);
+    }
+
+    h3 {
+      font-size: var(--text-h3);
+      line-height: var(--text-h3-line);
+      font-weight: var(--font-weight-medium);
+    }
+
+    h4 {
+      font-size: var(--text-body);
+      line-height: var(--text-body-line);
+      font-weight: var(--font-weight-medium);
+    }
+
+    p {
+      font-size: var(--text-body);
+      line-height: var(--text-body-line);
+      font-weight: var(--font-weight-normal);
+    }
+
+    small {
+      font-size: var(--text-small);
+      line-height: var(--text-small-line);
+      font-weight: var(--font-weight-normal);
+    }
+
+    label {
+      font-size: var(--text-body);
+      line-height: var(--text-body-line);
+      font-weight: var(--font-weight-medium);
+    }
+
+    button {
+      font-size: var(--text-body);
+      line-height: var(--text-body-line);
+      font-weight: var(--font-weight-medium);
+    }
+
+    input, textarea {
+      font-size: var(--text-body);
+      line-height: var(--text-body-line);
+      font-weight: var(--font-weight-normal);
+    }
+  }
+}
+
+/* Grid System */
+@layer utilities {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+
+  /* Mobile: 390px with 4 columns, 16px gutter */
+  @media (min-width: 390px) {
+    .container {
+      max-width: 390px;
+      padding-left: var(--space-4);
+      padding-right: var(--space-4);
+    }
+    
+    .grid-cols-mobile {
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-4);
+    }
+  }
+
+  /* Tablet: 768px with 8 columns, 24px gutter */
+  @media (min-width: 768px) {
+    .container {
+      max-width: 768px;
+      padding-left: var(--space-6);
+      padding-right: var(--space-6);
+    }
+    
+    .grid-cols-tablet {
+      grid-template-columns: repeat(8, 1fr);
+      gap: var(--space-6);
+    }
+  }
+
+  /* Desktop: 1440px with 12 columns, 24px gutter, 120px margin */
+  @media (min-width: 1440px) {
+    .container {
+      max-width: 1200px; /* 1440 - 120*2 = 1200 */
+      padding-left: var(--space-6);
+      padding-right: var(--space-6);
+    }
+    
+    .grid-cols-desktop {
+      grid-template-columns: repeat(12, 1fr);
+      gap: var(--space-6);
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
