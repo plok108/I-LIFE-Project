@@ -17,45 +17,12 @@ export default function LoginPage({ handleLogin }) {
     
     try {
       console.log("로그인 시도:", usernameOrEmail);
-      
-      const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          usernameOrEmail,
-          password,
-        }),
-      });
-
-      console.log("응답 상태:", response.status);
-
-      const data = await response.json();
-
-      if (response.ok) {
-        // 로그인 성공
-        console.log("로그인 성공:", data);
-        console.log("저장할 user:", data.user);
-        localStorage.setItem("token", data.token);
-        localStorage.setItem("user", JSON.stringify(data.user));
-        
-        // 저장 확인
-        console.log("localStorage 저장 확인:");
-        console.log("token:", localStorage.getItem("token"));
-        console.log("user:", localStorage.getItem("user"));
-        
-        // 짧은 딜레이 후 페이지 이동 (상태 업데이트를 위해)
-        setTimeout(() => {
-          navigate("/");
-        }, 100);
-      } else {
-        console.log("로그인 실패:", data);
-        setError(data.message || "로그인 실패");
-      }
+      // 전역 상태 업데이트를 위해 상위에서 전달된 handleLogin 사용  12
+      await handleLogin({ usernameOrEmail, password });
+      navigate("/");
     } catch (err) {
       console.error("로그인 에러:", err);
-      setError("서버 연결 오류가 발생했습니다: " + err.message);
+      setError(err.message || "로그인 실패");
     } finally {
       setLoading(false);
     }

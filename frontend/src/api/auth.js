@@ -32,14 +32,14 @@ async function request(path, opts = {}) {
   if (!res.ok) {
     const text = await res.text();
     let errorMessage = `HTTP ${res.status}: ${text}`;
-    
+
     try {
       const errorData = JSON.parse(text);
       errorMessage = errorData.message || errorMessage;
     } catch (e) {
       // JSON 파싱 실패 시 기본 메시지 사용
     }
-    
+
     throw new Error(errorMessage);
   }
 
@@ -54,7 +54,7 @@ async function request(path, opts = {}) {
 export async function getCurrentUser() {
   console.log("getCurrentUser 호출됨");
   console.log("getCurrentUser - USE_MOCK:", USE_MOCK);
-  
+
   if (USE_MOCK) {
     try {
       const raw = localStorage.getItem("mock_user");
@@ -69,10 +69,10 @@ export async function getCurrentUser() {
   try {
     const token = localStorage.getItem("token");
     const userStr = localStorage.getItem("user");
-    
+
     console.log("getCurrentUser - token:", token);
     console.log("getCurrentUser - userStr:", userStr);
-    
+
     if (token && userStr) {
       const user = JSON.parse(userStr);
       console.log("getCurrentUser - parsed user:", user);
@@ -132,7 +132,15 @@ export async function login(credentials) {
       password: credentials.password,
     }),
   });
-  
+
+  // 성공 시 토큰/유저 로컬 저장 (초기 로딩 및 새로고침 유지)
+  try {
+    if (data && data.token) localStorage.setItem("token", data.token);
+    if (data && data.user) localStorage.setItem("user", JSON.stringify(data.user));
+  } catch (e) {
+    console.warn("로컬 저장 실패:", e);
+  }
+
   return data.user;
 }
 
@@ -152,7 +160,7 @@ export async function register(user) {
     method: "POST",
     body: JSON.stringify(user),
   });
-  
+
   return data.user;
 }
 
