@@ -17,7 +17,7 @@ export default function LoginPage({ handleLogin }) {
     
     try {
       console.log("로그인 시도:", usernameOrEmail);
-      // 전역 상태 업데이트를 위해 상위에서 전달된 handleLogin 사용
+      // 전역 상태 업데이트를 위해 상위에서 전달된 handleLogin 사용  12
       await handleLogin({ usernameOrEmail, password });
       navigate("/");
     } catch (err) {
