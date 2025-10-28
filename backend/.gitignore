@@ -1,0 +1,89 @@
+# =========================
+# OS & IDE
+# =========================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.iml
+.project
+.classpath
+.settings/
+
+# =========================
+# Build / Tooling
+# =========================
+target/
+.out/
+build/
+dependency-reduced-pom.xml
+
+# Maven wrapper는 커밋해야 함 (아래 3줄은 ignore 예외)
+!mvnw
+!mvnw.cmd
+!.mvn/wrapper/**
+
+# =========================
+# Logs / temp
+# =========================
+*.log
+logs/
+*.pid
+*.seed
+hs_err_pid*
+replay_pid*
+tmp/
+temp/
+*.swp
+*.orig
+
+# =========================
+# Local DB / cache
+# =========================
+*.h2.db
+*.mv.db
+*.db
+mysql_data/
+derby.log
+
+# =========================
+# File uploads / generated assets
+# =========================
+uploads/
+storage/
+public/files/
+static/uploads/
+
+# =========================
+# Secrets / config (커밋 금지)
+# =========================
+.env
+.env.*
+*.key
+*.pem
+*.crt
+*.pfx
+*.p12
+*.jks
+keystore/
+
+# Spring config(민감값 들어갈 수 있는 로컬/개발/테스트만 무시)
+application-local.properties
+application-local.yml
+application-dev.properties
+application-dev.yml
+application-test.properties
+application-test.yml
+application.yml   #  여기에 id, password 정보 있어서 올리면 안되는 파일임
+# 샘플은 커밋 권장
+!application-example.yml
+
+# =========================
+# Docker / Compose artifacts
+# =========================
+docker/*.env
+docker/.env
+*.tar
+
+# Editor backup
+*~
