@@ -1,0 +1,14 @@
+# OS/IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.iml
+
+# 에디터 백업
+*~
+
+# 공통 로그/임시
+*.log
+logs/
+tmp/
