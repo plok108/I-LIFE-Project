@@ -210,6 +210,7 @@ function App() {
             path="/community/view/:id"
             element={<CommunityDetail user={user} />}
           />
+          
           <Route path="/market" element={<MarketPage user={user} />} />
           <Route path="/market/new" element={<MarketWrite />} />
           <Route
